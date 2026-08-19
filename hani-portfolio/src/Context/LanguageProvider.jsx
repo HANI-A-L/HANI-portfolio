@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import LanguageContext from "./LanguageContext";
-
 import en from "../locales/en";
 import fa from "../locales/fa";
 

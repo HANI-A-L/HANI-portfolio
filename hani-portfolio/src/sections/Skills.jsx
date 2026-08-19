@@ -1,5 +1,4 @@
 import useLanguage from "../context/useLanguage";
-
 function Skills() {
   const { t } = useLanguage();
 

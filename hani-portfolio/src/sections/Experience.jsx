@@ -1,4 +1,4 @@
-import useLanguage from "../context/useLanguage";
+import useLanguage from "../Context/useLanguage";
 
 function Experience() {
   const { t } = useLanguage();

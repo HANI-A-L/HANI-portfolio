@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useLanguage from "../context/useLanguage";
+import useLanguage from "../Context/useLanguage";
 
 function Contact() {
   const { t } = useLanguage();
@@ -34,7 +34,7 @@ Message:
 ${message}
     `;
 
-    window.location.href = `ahanieh347@gmail.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:ahanieh347@gmail.com?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
   };
@@ -55,7 +55,7 @@ ${message}
             <div className="contact-links">
               {/* EMAIL */}
 
-              <a href="mailto:YOUR_EMAIL@gmail.com" className="contact-link">
+              <a href="mailto:ahanieh347@gmail.com" className="contact-link">
                 <span className="contact-link-label">{t.contact.email}</span>
 
                 <span className="contact-link-value">ahanieh347@gmail.com</span>

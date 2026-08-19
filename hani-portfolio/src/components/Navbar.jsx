@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useLanguage from "../context/useLanguage";
+import useLanguage from "../Context/useLanguage";
 
 function Navbar() {
   const { t, language, toggleLanguage } = useLanguage();

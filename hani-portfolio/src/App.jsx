@@ -7,6 +7,8 @@ import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
+
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <>
@@ -21,6 +23,8 @@ function App() {
       </main>
 
       <Footer />
+
+      <Analytics />
     </>
   );
 }

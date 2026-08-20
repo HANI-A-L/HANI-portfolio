@@ -1,43 +1,7 @@
-import { useState } from "react";
 import useLanguage from "../Context/useLanguage";
 
 function Contact() {
   const { t } = useLanguage();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const { name, email, message } = formData;
-
-    const subject = `Portfolio Contact - ${name}`;
-
-    const body = `
-Name: ${name}
-Email: ${email}
-
-Message:
-${message}
-    `;
-
-    window.location.href = `mailto:ahanieh347@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-  };
 
   return (
     <section id="contact" className="contact-section">
@@ -55,16 +19,16 @@ ${message}
             <div className="contact-links">
               {/* EMAIL */}
 
-              <a href="mailto:ahanieh347@gmail.com" className="contact-link">
+              <a href="mailto:your@email.com" className="contact-link">
                 <span className="contact-link-label">{t.contact.email}</span>
 
-                <span className="contact-link-value">ahanieh347@gmail.com</span>
+                <span className="contact-link-value">ahanieh347@email.com</span>
               </a>
 
               {/* GITHUB */}
 
               <a
-                href="https://github.com/"
+                href="https://github.com/HANI-A-L"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
@@ -73,65 +37,31 @@ ${message}
 
                 <span className="contact-link-value">GitHub ↗</span>
               </a>
+
+              {/* LINKEDIN */}
+
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+              >
+                <span className="contact-link-label">{t.contact.linkedin}</span>
+
+                <span className="contact-link-value">LinkedIn ↗</span>
+              </a>
             </div>
           </div>
 
-          {/* RIGHT - CONTACT FORM */}
+          {/* RIGHT - CONTACT INFO */}
 
-          <form className="contact-form" onSubmit={handleSubmit}>
-            {/* NAME */}
+          <div className="contact-side">
+            <div className="contact-side-content">
+              <span className="contact-side-number">01</span>
 
-            <div className="form-group">
-              <label htmlFor="name">{t.contact.form.name}</label>
-
-              <input
-                id="name"
-                type="text"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={t.contact.form.name}
-                required
-              />
+              <p>{t.contact.description}</p>
             </div>
-
-            {/* EMAIL */}
-
-            <div className="form-group">
-              <label htmlFor="email">{t.contact.form.email}</label>
-
-              <input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder={t.contact.form.email}
-                required
-              />
-            </div>
-
-            {/* MESSAGE */}
-
-            <div className="form-group">
-              <label htmlFor="message">{t.contact.form.message}</label>
-
-              <textarea
-                id="message"
-                rows="6"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder={t.contact.form.message}
-                required
-              ></textarea>
-            </div>
-
-            {/* SUBMIT */}
-
-            <button type="submit" className="contact-submit">
-              {t.contact.form.submit}
-
-              <span>↗</span>
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
